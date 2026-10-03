@@ -1,0 +1,37 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-mono-chem {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subscript styling for chemical formulas */
+sub {
+  bottom: -0.25em;
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* Pulse glow effect for correctly balanced equations */
+@keyframes successGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 0 35px rgba(16, 185, 129, 0.8); }
+}
+
+.balanced-glow {
+  animation: successGlow 2s infinite ease-in-out;
+}
+
+/* Custom scrollbar for equation table */
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
