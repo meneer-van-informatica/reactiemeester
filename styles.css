@@ -1,37 +1,112 @@
+/* ==========================================================================
+   Basis Typografie & Lichte Achtergrond
+   ========================================================================== */
 body {
   font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc !important; /* Zacht lichtgrijs (slate-50) */
+  color: #334155 !important; /* Donkergrijs voor optimale leesbaarheid (slate-700) */
 }
 
 .font-mono-chem {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Subscript styling for chemical formulas */
-sub {
-  bottom: -0.25em;
-  font-size: 0.75em;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+/* ==========================================================================
+   Kaarten, Headers & Modals (Wit en verhoogd)
+   ========================================================================== */
+header, 
+#game-card, 
+#help-modal > div, 
+#victory-modal > div,
+.bg-slate-900, 
+.bg-slate-950\/70,
+.bg-slate-900\/60 {
+  background-color: #ffffff !important; /* Helder wit */
+  border-color: #e2e8f0 !important; /* Zachte lichte rand */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01) !important;
 }
 
-/* Pulse glow effect for correctly balanced equations */
-@keyframes successGlow {
-  0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
-  50% { box-shadow: 0 0 35px rgba(16, 185, 129, 0.8); }
+/* Transparante header fix voor het lichte thema */
+header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
 }
 
+/* ==========================================================================
+   Tekstkleuren (Overschrijven van de 'text-white' en 'text-slate-400')
+   ========================================================================== */
+h1, h2, h3, .text-white {
+  color: #0f172a !important; /* Bijna zwart (slate-900) voor titels */
+}
+
+.text-slate-400, .text-slate-300, .text-slate-200 {
+  color: #64748b !important; /* Subtiel grijs voor subtitels en beschrijvingen */
+}
+
+/* ==========================================================================
+   Interactieve Elementen & Knoppen (Van donker naar licht)
+   ========================================================================== */
+.bg-slate-800, 
+.bg-slate-800\/80,
+.bg-slate-800\/60 {
+  background-color: #f1f5f9 !important; /* Lichte invulvelden (slate-100) */
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+
+.bg-slate-800:hover {
+  background-color: #e2e8f0 !important; /* Iets donkerder bij hover */
+}
+
+/* Kleine knopjes (Plus en Min) */
+.bg-slate-700 {
+  background-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+.bg-slate-700:hover {
+  background-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   Specifieke Game Componenten
+   ========================================================================== */
+/* Atoombalans kaartjes als ze nog NIET kloppen */
+#atom-balance-grid > div.bg-slate-900\/90 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+/* Atoombalans kaartjes als ze WEL kloppen (succes state) */
+#atom-balance-grid > div.bg-emerald-950\/40 {
+  background-color: #ecfdf5 !important; /* Zacht mintgroen */
+  border-color: #a7f3d0 !important;
+}
+
+/* Level indicator achtergrond */
+.bg-emerald-950\/60 {
+  background-color: #ecfdf5 !important;
+}
+
+/* ==========================================================================
+   Animaties & Effecten
+   ========================================================================== */
+/* De groene gloed als de vergelijking succesvol is opgelost */
 .balanced-glow {
-  animation: successGlow 2s infinite ease-in-out;
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.15) !important;
+  border-color: #34d399 !important;
+  background-color: #f8fafc !important; /* Subtiele achtergrond shift */
 }
 
-/* Custom scrollbar for equation table */
-::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
+/* Footer styling */
+footer {
+  background-color: #ffffff !important;
+  border-top-color: #e2e8f0 !important;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #475569;
-  border-radius: 4px;
+/* Zorg dat de operator statische tekst (+ en ->) duidelijker is */
+.text-slate-500 {
+  color: #94a3b8 !important;
 }
